@@ -34,19 +34,9 @@ android {
             )
         }
         debug {
-            isMinifyEnabled = true
-            // Even debug builds need R8 here: the aliyun-java-sdk-alidns
-            // jar references org.apache.http.conn.ssl.AllowAllHostnameVerifier
-            // .INSTANCE at runtime, and that field is absent in the
-            // platform's org.apache.http.legacy stub on API 28+. Without
-            // R8 the bytecode reference is never rewritten and the app
-            // crashes on first aliyun API call. Release builds get this
-            // for free; debug builds opt in here so the keep/rename rules
-            // in proguard-rules.pro run during `:app:assembleDebug`.
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            // No R8 on debug: build is faster (~30s vs ~95s) and stack
+            // traces point to real source. Hand-rolled OkHttp REST client
+            // has no framework conflicts that would need keep rules.
         }
     }
 
@@ -66,12 +56,7 @@ android {
                 "META-INF/DEPENDENCIES",
                 "META-INF/NOTICE",
                 "META-INF/NOTICE.md",
-                "META-INF/INDEX.LIST",
-                // Both darabonba-java-core and aliyun-java-auth (v2 SDK
-                // transitives) ship a core.properties resource at the jar
-                // root (not under META-INF/darabonba/); pick one (the
-                // contents are identical) to avoid a merge collision.
-                "core.properties"
+                "META-INF/INDEX.LIST"
             )
         }
     }
