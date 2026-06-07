@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">IPv6DDNS</string>
+
+    <string name="tab_status">状态</string>
+    <string name="tab_config">配置</string>
+    <string name="tab_log">日志</string>
+
+    <string name="status_running">服务：运行中</string>
+    <string name="status_stopped">服务：未运行</string>
+    <string name="status_current_ip">当前公网 IPv6</string>
+    <string name="status_no_ip">— 暂未获取 —</string>
+    <string name="status_dns_record">阿里云 AAAA 记录</string>
+    <string name="status_dns_value">—</string>
+    <string name="status_last_check">上次检测时间</string>
+    <string name="status_last_error">上次错误</string>
+    <string name="status_no_error">无错误</string>
+    <string name="status_next_check">下次检测倒计时</string>
+    <string name="status_start">启动服务</string>
+    <string name="status_stop">停止服务</string>
+    <string name="status_check_now">立即检测一次</string>
+    <string name="status_refresh">刷新</string>
+    <string name="status_notif_denied_title">通知权限被拒</string>
+    <string name="status_notif_denied_msg">没有通知权限，前台服务无法显示运行状态。打开系统设置授予权限。</string>
+    <string name="status_notif_denied_action">去设置</string>
+    <string name="status_notif_denied_rerequest">再问一次</string>
+    <string name="status_battery_title">电池优化</string>
+    <string name="status_battery_msg">为保证 DDNS 后台稳定运行，请将本应用加入电池白名单。</string>
+    <string name="status_battery_action">申请白名单</string>
+
+    <string name="config_title">阿里云 DDNS 配置</string>
+    <string name="config_ak_id">AccessKey ID</string>
+    <string name="config_ak_secret">AccessKey Secret</string>
+    <string name="config_root_domain">主域名（如 example.com）</string>
+    <string name="config_sub_domain">子域名（如 home.example.com）</string>
+    <string name="config_interval">检测间隔</string>
+    <string name="config_save">保存</string>
+    <string name="config_saved">已保存</string>
+    <string name="config_invalid">请填写所有字段且格式正确</string>
+    <string name="config_battery_title">电池优化</string>
+    <string name="config_battery_msg">为保证 DDNS 稳定后台运行，请将本应用加入电池白名单。</string>
+    <string name="config_battery_action">申请白名单</string>
+    <string name="config_battery_done">已申请</string>
+    <string name="config_paste">从剪贴板粘贴</string>
+    <string name="toast_pasted">已粘贴</string>
+    <string name="toast_clipboard_empty">剪贴板为空</string>
+    <string name="config_interval_1">1 分钟（调试）</string>
+    <string name="config_interval_5">5 分钟</string>
+    <string name="config_interval_10">10 分钟</string>
+    <string name="config_interval_30">30 分钟（推荐）</string>
+    <string name="config_interval_60">60 分钟</string>
+
+    <string name="probe_title">IPv6 探测源</string>
+    <string name="probe_summary">已配置 %1$d 个探测源</string>
+    <string name="probe_edit">编辑探测源</string>
+    <string name="probe_dialog_title">管理探测源</string>
+    <string name="probe_dialog_help">按顺序逐个尝试，第一个返回合法 IPv6 的生效。返回单行文本选 text，返回 {\"ip\":\"...\"} 选 json。</string>
+    <string name="probe_restore_defaults">恢复默认</string>
+    <string name="probe_add">添加</string>
+    <string name="probe_delete">删除该探测源</string>
+    <string name="probe_format_label">返回格式</string>
+    <string name="probe_empty">请至少添加一个探测源</string>
+    <string name="probe_bad_url">存在非法 URL（必须以 http/https 开头）</string>
+    <string name="probe_test">测试该探测源</string>
+    <string name="probe_test_ok">成功 — %1$s</string>
+    <string name="probe_test_fail">失败 — %1$s</string>
+    <string name="action_done">完成</string>
+    <string name="action_cancel">取消</string>
+
+    <string name="log_title">运行日志</string>
+    <string name="log_clear">清空</string>
+    <string name="log_empty">暂无日志</string>
+
+    <string name="notif_channel_name">IPv6DDNS 运行中</string>
+    <string name="notif_channel_desc">显示当前公网 IPv6 与下次检测时间。</string>
+    <string name="notif_title">IPv6DDNS 运行中</string>
+    <string name="notif_text_idle">等待检测…</string>
+    <string name="notif_action_stop">停止</string>
+    <string name="notif_action_check">立即检测</string>
+
+    <string name="msg_probe_start">开始探测 IPv6…</string>
+    <string name="msg_probe_ok">探测成功：%1$s（来自 %2$s）</string>
+    <string name="msg_probe_fail_all">所有探测源均失败，最后错误：%1$s</string>
+    <string name="msg_probe_source_fail">探测源 %1$s 失败：%2$s</string>
+    <string name="msg_dns_no_config">DDNS 未配置，跳过更新。</string>
+    <string name="msg_dns_describe">正在查询 %1$s 的解析记录…</string>
+    <string name="msg_dns_describe_fail">DescribeDomainRecords 失败：%1$s</string>
+    <string name="msg_dns_record_found">已存在 AAAA 记录：id=%1$s, value=%2$s</string>
+    <string name="msg_dns_no_record">不存在 AAAA 记录，将创建。</string>
+    <string name="msg_dns_add">新增 AAAA 记录 %1$s → %2$s</string>
+    <string name="msg_dns_add_ok">AddDomainRecord 成功：%1$s</string>
+    <string name="msg_dns_add_fail">AddDomainRecord 失败：%1$s</string>
+    <string name="msg_dns_update">更新 AAAA 记录 %1$s → %2$s</string>
+    <string name="msg_dns_update_ok">UpdateDomainRecord 成功</string>
+    <string name="msg_dns_update_fail">UpdateDomainRecord 失败：%1$s</string>
+    <string name="msg_dns_unchanged">IPv6 未变化，跳过 API 写入。</string>
+    <string name="msg_dns_same_value">阿里云记录已一致，无需变更。</string>
+    <string name="msg_service_started">服务已启动</string>
+    <string name="msg_service_stopped">服务已停止</string>
+    <string name="msg_work_scheduled">WorkManager 兜底已计划（15 分钟）</string>
+    <string name="msg_work_duplicate">前台服务运行中，跳过 WorkManager 重复执行</string>
+    <string name="msg_work_run">WorkManager 正在执行 DDNS 更新</string>
+    <string name="msg_invalid_ip">非法的 IPv6 地址：%1$s</string>
+    <string name="msg_invalid_endpoint">探测源返回非 IPv6：%1$s</string>
+    <string name="msg_battery_prompt">请授予电池白名单，以保证后台稳定运行。</string>
+    <string name="msg_perm_notif">通知权限被拒，前台服务无法显示状态栏通知。</string>
+    <string name="msg_ak_missing">AccessKey 未配置</string>
+
+    <string name="fmt_minutes">%1$d 分</string>
+    <string name="fmt_seconds">%1$d 秒</string>
+</resources>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">IPv6DDNS</string>
+
+    <!-- Tabs -->
+    <string name="tab_status">Status</string>
+    <string name="tab_config">Config</string>
+    <string name="tab_log">Log</string>
+
+    <!-- Status screen -->
+    <string name="status_running">Service: Running</string>
+    <string name="status_stopped">Service: Stopped</string>
+    <string name="status_current_ip">Current public IPv6</string>
+    <string name="status_no_ip">— not detected —</string>
+    <string name="status_dns_record">Aliyun AAAA record</string>
+    <string name="status_dns_value">—</string>
+    <string name="status_last_check">Last check time</string>
+    <string name="status_last_error">Last error</string>
+    <string name="status_no_error">No error</string>
+    <string name="status_next_check">Next check in</string>
+    <string name="status_start">Start service</string>
+    <string name="status_stop">Stop service</string>
+    <string name="status_check_now">Check now</string>
+    <string name="status_refresh">Refresh</string>
+    <string name="status_notif_denied_title">Notifications are blocked</string>
+    <string name="status_notif_denied_msg">Without notification permission, the foreground service can\'t show its status. Open system settings to grant it.</string>
+    <string name="status_notif_denied_action">Open settings</string>
+    <string name="status_notif_denied_rerequest">Ask again</string>
+    <string name="status_battery_title">Battery optimization</string>
+    <string name="status_battery_msg">Add this app to the battery whitelist so DDNS keeps running reliably in the background.</string>
+    <string name="status_battery_action">Request whitelist</string>
+
+    <!-- Config screen -->
+    <string name="config_title">Aliyun DDNS configuration</string>
+    <string name="config_ak_id">AccessKey ID</string>
+    <string name="config_ak_secret">AccessKey Secret</string>
+    <string name="config_root_domain">Root domain (e.g. example.com)</string>
+    <string name="config_sub_domain">Subdomain (e.g. home.example.com)</string>
+    <string name="config_interval">Detection interval</string>
+    <string name="config_save">Save</string>
+    <string name="config_saved">Saved</string>
+    <string name="config_invalid">Please fill all fields with valid values</string>
+    <string name="config_battery_title">Battery optimization</string>
+    <string name="config_battery_msg">To keep DDNS running reliably, please add this app to the battery whitelist.</string>
+    <string name="config_battery_action">Request whitelist</string>
+    <string name="config_battery_done">Already requested</string>
+    <string name="config_paste">Paste from clipboard</string>
+    <string name="toast_pasted">Pasted</string>
+    <string name="toast_clipboard_empty">Clipboard is empty</string>
+    <string name="config_interval_1">1 minute (debug)</string>
+    <string name="config_interval_5">5 minutes</string>
+    <string name="config_interval_10">10 minutes</string>
+    <string name="config_interval_30">30 minutes (recommended)</string>
+    <string name="config_interval_60">60 minutes</string>
+
+    <!-- Probe sources editor -->
+    <string name="probe_title">IPv6 probe sources</string>
+    <string name="probe_summary">%1$d source(s) configured</string>
+    <string name="probe_edit">Edit sources</string>
+    <string name="probe_dialog_title">Manage probe sources</string>
+    <string name="probe_dialog_help">Sources are tried in order. The first valid IPv6 wins. Choose \"text\" for endpoints that return the IP on a single line, \"json\" for endpoints that return {\"ip\":\"...\"}.</string>
+    <string name="probe_restore_defaults">Restore defaults</string>
+    <string name="probe_add">Add</string>
+    <string name="probe_delete">Delete this source</string>
+    <string name="probe_format_label">Response format</string>
+    <string name="probe_empty">Add at least one probe source</string>
+    <string name="probe_bad_url">One or more URLs are invalid (must start with http/https)</string>
+    <string name="probe_test">Test this source</string>
+    <string name="probe_test_ok">OK — %1$s</string>
+    <string name="probe_test_fail">Failed — %1$s</string>
+    <string name="action_done">Done</string>
+    <string name="action_cancel">Cancel</string>
+
+    <!-- Log screen -->
+    <string name="log_title">Runtime log</string>
+    <string name="log_clear">Clear</string>
+    <string name="log_empty">No log entries yet.</string>
+
+    <!-- Service / Notification -->
+    <string name="notif_channel_name">IPv6DDNS running</string>
+    <string name="notif_channel_desc">Shows current IPv6 and next check time.</string>
+    <string name="notif_title">IPv6DDNS running</string>
+    <string name="notif_text_idle">Waiting…</string>
+    <string name="notif_action_stop">Stop</string>
+    <string name="notif_action_check">Check now</string>
+
+    <!-- Worker / log messages -->
+    <string name="msg_probe_start">Starting IPv6 probe…</string>
+    <string name="msg_probe_ok">Probe success: %1$s (via %2$s)</string>
+    <string name="msg_probe_fail_all">All probe sources failed. Last error: %1$s</string>
+    <string name="msg_probe_source_fail">Probe source %1$s failed: %2$s</string>
+    <string name="msg_dns_no_config">DDNS not configured, skipping update.</string>
+    <string name="msg_dns_describe">Querying record list for %1$s …</string>
+    <string name="msg_dns_describe_fail">DescribeDomainRecords failed: %1$s</string>
+    <string name="msg_dns_record_found">Existing AAAA record: id=%1$s, value=%2$s</string>
+    <string name="msg_dns_no_record">No AAAA record, will create one.</string>
+    <string name="msg_dns_add">Adding AAAA record %1$s → %2$s</string>
+    <string name="msg_dns_add_ok">AddDomainRecord OK: %1$s</string>
+    <string name="msg_dns_add_fail">AddDomainRecord failed: %1$s</string>
+    <string name="msg_dns_update">Updating AAAA record %1$s → %2$s</string>
+    <string name="msg_dns_update_ok">UpdateDomainRecord OK</string>
+    <string name="msg_dns_update_fail">UpdateDomainRecord failed: %1$s</string>
+    <string name="msg_dns_unchanged">IPv6 unchanged, skipping API write.</string>
+    <string name="msg_dns_same_value">Aliyun record already matches, no change needed.</string>
+    <string name="msg_service_started">Service started</string>
+    <string name="msg_service_stopped">Service stopped</string>
+    <string name="msg_work_scheduled">WorkManager fallback scheduled (15 min)</string>
+    <string name="msg_work_duplicate">Foreground service active, skipping worker run</string>
+    <string name="msg_work_run">Worker executing DDNS update</string>
+    <string name="msg_invalid_ip">Invalid IPv6 address: %1$s</string>
+    <string name="msg_invalid_endpoint">Bad endpoint response, expected IPv6 but got: %1$s</string>
+    <string name="msg_battery_prompt">Please grant the battery whitelist for stable background running.</string>
+    <string name="msg_perm_notif">Notification permission denied, foreground service will not show a status bar.</string>
+    <string name="msg_ak_missing">AccessKey not configured</string>
+
+    <!-- Time format -->
+    <string name="fmt_minutes">%1$d min</string>
+    <string name="fmt_seconds">%1$d s</string>
+</resources>

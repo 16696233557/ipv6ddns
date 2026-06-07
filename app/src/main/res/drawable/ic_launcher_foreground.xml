@@ -1,0 +1,27 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Simple "6" mark representing IPv6 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,30
+                          C44,30 36,40 36,54
+                          C36,68 44,78 54,78
+                          C62,78 68,72 70,66
+                          L62,62
+                          C61,66 58,70 54,70
+                          C48,70 44,64 44,54
+                          C44,44 48,38 54,38
+                          C58,38 61,42 62,46
+                          L70,42
+                          C68,34 62,30 54,30 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M76,46
+                          L80,46
+                          L80,74
+                          L76,74
+                          Z" />
+</vector>
