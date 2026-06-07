@@ -142,7 +142,7 @@ class DDNSScheduler(
                     ))
                     return
                 }
-                val syncResult = withContext(Dispatchers.IO) { dns.sync(config, ipv6) }
+                val syncResult = dns.sync(config, ipv6)
                 when (syncResult) {
                     is AliyunDnsClient.Result.Created -> {
                         state.setLastSuccess(ipv6, syncResult.value, syncResult.recordId)
