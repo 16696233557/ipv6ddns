@@ -11,9 +11,6 @@ securityCrypto = "1.1.0-alpha06"
 okhttp = "4.12.0"
 moshi = "1.15.1"
 coroutines = "1.7.3"
-aliyunCore = "4.6.3"
-aliyunAlidnsV2 = "4.0.12"
-fastjson = "1.2.83"
 desugar = "2.0.4"
 material = "1.11.0"
 
@@ -38,9 +35,6 @@ okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor",
 moshi = { group = "com.squareup.moshi", name = "moshi", version.ref = "moshi" }
 moshi-kotlin = { group = "com.squareup.moshi", name = "moshi-kotlin", version.ref = "moshi" }
 kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
-aliyun-java-sdk-core = { group = "com.aliyun", name = "aliyun-java-sdk-core", version.ref = "aliyunCore" }
-aliyun-java-sdk-alidns-v2 = { group = "com.aliyun", name = "alibabacloud-alidns20150109", version.ref = "aliyunAlidnsV2" }
-fastjson = { group = "com.alibaba", name = "fastjson", version.ref = "fastjson" }
 desugar-jdk-libs = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "desugar" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 

@@ -125,35 +125,4 @@ dependencies {
     implementation(libs.moshi.kotlin)
 
     implementation(libs.kotlinx.coroutines.android)
-
-    // Aliyun DNS v2 SDK (alibabacloud-alidns20150109:4.0.12). The v1 SDK
-    // (aliyun-java-sdk-alidns) is unmaintained on Android 14: it hardcodes
-    // Apache HttpClient 4.5.x, which has an `AllowAllHostnameVerifier.INSTANCE`
-    // static field that is missing in Android 14's platform stub, so any
-    // HTTPS call to api.aliyuncs.com raises NoSuchFieldError. The v2 SDK
-    // uses aliyun-gateway-pop + darabonba-java-core internally; both target
-    // Java 8 and work on Android without the legacy HttpClient dependency.
-    //
-    // We pull in the v2 jar directly and exclude the v1 aliyun-java-sdk-core
-    // transitive (defined in [libraries] above as aliyun-java-sdk-core) which
-    // would otherwise bring in bcprov-jdk15on-1.70 and conflict with v2's
-    // bcprov-jdk18on-1.78.1 (BouncyCastle cannot have two versions in the
-    // same dex).
-    //
-    // We also exclude the pull-parser transitive. dom4j (a transitive of v2
-    // aliyun-java-core 0.3.5-beta) references org.xmlpull.v1.XmlPullParser,
-    // and R8 full mode refuses to compile when a program class shadows a
-    // library class that the framework implements — in this case Android's
-    // android.content.res.XmlResourceParser already implements that exact
-    // XmlPullParser interface, so the pull-parser jar's copy is dead weight
-    // that breaks R8. The DNS codepath doesn't use SAXReader (it goes via
-    // aliyun-gateway-pop + java.net.http.HttpClient), so excluding
-    // pull-parser is safe. Proguard rules in app/proguard-rules.pro silence
-    // any -dontwarn fallout from this exclude.
-    implementation(libs.aliyun.java.sdk.alidns.v2) {
-        exclude(group = "com.aliyun", module = "aliyun-java-sdk-core")
-        exclude(group = "pull-parser", module = "pull-parser")
-        exclude(group = "xpp3", module = "xpp3")
-    }
-    implementation(libs.fastjson)
 }
